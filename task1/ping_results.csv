@@ -1,0 +1,10 @@
+Host;RTT;Jitter;Packet Loss%;Packets Received
+google.com;92.638;1.416;0;3
+yandex.ru;57.271;0.23;0;3
+github.com;88.14;0.637;0;3
+rutracker-net.ru;53.092;0.936;0;3
+vk.com;62.221;0.807;0;3
+mail.ru;102.359;7.39;33;2
+youtube.com;93.427;0.359;0;3
+nsu.ru;0.0;0.0;100;0
+nstu.ru;17.283;0.497;0;3
