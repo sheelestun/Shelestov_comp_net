@@ -1,5 +1,7 @@
 import csv
+
 from icmplib import ping
+
 
 domains = ["google.com", "yandex.ru", "github.com", "rutracker-net.ru",
            "vk.com", "mail.ru", "youtube.com", "nsu.ru", "nstu.ru"]
@@ -23,13 +25,13 @@ for domain in domains:
             "Packet Loss%": 100,
             "Packets Received": 0
         })
-        print(f"Error during checking domain: {domain}!\n "
+        print(f"Error during checking domain: {domain}!\n"
               f"Error: {e}")
 
 with open("ping_results.csv", "w", newline="") as f:
-    result = csv.DictWriter(f, fieldnames=["Host", "RTT", "Jitter",
+    writer = csv.DictWriter(f, fieldnames=["Host", "RTT", "Jitter",
                                            "Packet Loss%", "Packets Received"],
                             delimiter=";")
-    result.writeheader()
-    result.writerows(results)
+    writer.writeheader()
+    writer.writerows(results)
 print("\nResults saved in ping_results.csv")
