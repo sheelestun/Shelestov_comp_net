@@ -16,4 +16,5 @@ with sync_playwright() as p:
     page.goto("https://example.com")
     time.sleep(2)
 
+    # Сам анализ делал через wireshark
     browser.close()
