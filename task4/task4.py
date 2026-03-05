@@ -40,8 +40,10 @@ def parse_endpoint(url: str = Query(...)):
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         page.on("request", lambda result: requests_data.append({
-            "url": result.url, "method": result.method,
-            "resource_type": result.resource_type, "headers": dict(result.headers)
+            "url": result.url, 
+            "method": result.method,
+            "resource_type": result.resource_type, 
+            "headers": dict(result.headers)
         }))
         page.goto(url, wait_until="domcontentloaded")
         page.wait_for_timeout(2000)
